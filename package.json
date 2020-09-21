@@ -1,0 +1,32 @@
+{
+  "name": "fb-messenger-bot",
+  "version": "1.0.0",
+  "description": "Build a Facebook Messenger restaurant chatbot with Node.js platform",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mconour/fb-messenger-bot.git"
+  },
+  "keywords": [
+    "Facebook",
+    "chatbot",
+    "used",
+    "in",
+    "messenger"
+  ],
+  "author": "MC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mconour/fb-messenger-bot/issues"
+  },
+  "homepage": "https://github.com/mconour/fb-messenger-bot#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
