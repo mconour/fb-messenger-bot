@@ -24,19 +24,15 @@ let setUpUserFacebookProfile = (req, res) => {
                 "composer_input_disabled": false,
                 "call_to_actions": [
                     {
-                        "type": "postback",
-                        "title": "Talk to an agent",
-                        "payload": "CARE_HELP"
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Outfit suggestions",
-                        "payload": "CURATION"
+                        "type": "web_url",
+                        "title": "View Github",
+                        "url": "https://github.com/mconour/fb-messenger-bot",
+                        "webview_height_ratio": "full"
                     },
                     {
                         "type": "web_url",
-                        "title": "Shop now",
-                        "url": "https://www.originalcoastclothing.com/",
+                        "title": "View Website",
+                        "url": "http://michaelconour.com/",
                         "webview_height_ratio": "full"
                     }
                 ]
