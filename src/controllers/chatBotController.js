@@ -128,7 +128,7 @@ function handlePostback(sender_psid, received_postback) {
     } else if (payload === 'no') {
       response = { "text": "Oops, try sending another image." }
     } else if (payload === "GET_STARTED") {
-        response = { "text": "Hello there, and welcome!" }
+        response = { "text": "hello there...welcome!" }
     }
 
     // Send the message to acknowledge the postback
