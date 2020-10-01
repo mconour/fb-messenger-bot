@@ -117,7 +117,7 @@ function handleMessage(sender_psid, received_message) {
 }
 
 // Handles messaging_postbacks events
-let handlePostback = asnyc(sender_psid, received_postback) => {
+let handlePostback = async (sender_psid, received_postback) => {
     let response;
   
     // Get the payload for the postback
