@@ -170,7 +170,6 @@ function callSendAPI(sender_psid, response) {
 
 }
 
-
 module.exports = {
     postWebhook: postWebhook,
     getWebhook: getWebhook
