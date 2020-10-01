@@ -125,16 +125,16 @@ function handlePostback(sender_psid, received_postback) {
     // Set the response based on the postback payload
     switch (payload) {
         case "GET_STARTED":
-            response = {"text": "Welcome, ABC_NAME, to RestaurantDemo!"};
+            response = {"text": "Hi, ABC_NAME! Welcome to RestaurantDemo!"};
             break;
         case "no":
             response = {};
-            break;
+            break; 
         case "yes":
             response = {};
             break;
         default:
-            console.log("something is wrong with payload switch case");
+            console.log("something is wrong with payload switch statement.");
     }   
 
     // Send the message to acknowledge the postback
