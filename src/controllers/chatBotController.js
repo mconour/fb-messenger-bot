@@ -128,7 +128,7 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "GET_STARTED":
             // get username
             let username = await chatBotService.getFacebookUsername(sender_psid);
-            response = {"text": `Hi, ${username}, welcome to RestaurantDemo!`};
+            response = {"text": `Hi, ${username}! Welcome to RestaurantDemo`};
             break;
         case "no":
             response = {};
