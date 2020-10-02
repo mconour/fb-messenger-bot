@@ -21,6 +21,32 @@ let getFacebookUsername = (sender_psid) => {
     });
 };
 
+let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
+    return new Promise((resolve, reject) => {
+        let response = {
+            "attachment": {
+              "type": "template",
+              "payload": {
+                "template_type": "generic",
+                "elements": [{
+                  "title": "Is this the right picture?",
+                  "subtitle": "Tap a button to answer.",
+                  "image_url": "url goes here",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Yes!",
+                      "payload": "yes",
+                    }
+                  ],
+                }]
+              }
+            }
+          }
+    });
+};
+
 module.exports = {
-    getFacebookUsername: getFacebookUsername
+    getFacebookUsername: getFacebookUsername,
+    sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer
 };
