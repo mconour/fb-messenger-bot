@@ -23,9 +23,8 @@ let getFacebookUsername = (sender_psid) => {
 
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
-        let response_first = {
-            "text": `Hi, ${username}! Welcome to RestaurantDemo`
-        };
+        try {
+        let response_first = {"text": `Hi, ${username}! Welcome to RestaurantDemo`};
         let response_second = {
             "attachment": {
                 "type": "template",
@@ -50,11 +49,20 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
 
         // send an image with a button to view menu
         await sendMessage(sender_psid, response_second);
+
+        resolve("complete");
+
+        } catch(e) {
+            reject(e);
+        }
+
+
+        
     });
 };
 
 
-let sendMessage = (sender_id, response) => {
+let sendMessage = (sender_psid, response) => {
     let request_body = {
         "recipient": {
             "id": sender_psid
