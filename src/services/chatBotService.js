@@ -32,7 +32,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                     "template_type": "generic",
                     "elements": [{
                         "title": "RestaurantDemo",
-                        "image_url": "https://bit.ly/2EXfm6T",
+                        "image_url": "https://bit.ly/imageToSend",
                         "buttons": [
                             {
                             "type": "postback",
