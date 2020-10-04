@@ -22,29 +22,62 @@ let getFacebookUsername = (sender_psid) => {
 };
 
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
-    return new Promise((resolve, reject) => {
-        let response = {
+    return new Promise(async (resolve, reject) => {
+        let response_first = {
+            "text": `Hi, ${username}! Welcome to RestaurantDemo`
+        };
+        let response_second = {
             "attachment": {
-              "type": "template",
-              "payload": {
-                "template_type": "generic",
-                "elements": [{
-                  "title": "Is this the right picture?",
-                  "subtitle": "Tap a button to answer.",
-                  "image_url": "url goes here",
-                  "buttons": [
-                    {
-                      "type": "postback",
-                      "title": "Yes!",
-                      "payload": "yes",
-                    }
-                  ],
-                }]
-              }
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [{
+                        "title": "RestaurantDemo",
+                        "image_url": "https://bit.ly/imageToSend",
+                        "buttons": [
+                            {
+                            "type": "postback",
+                            "title": "Main menu",
+                            "payload": "MENU",
+                            }
+                     ],
+                    }]
+                }
             }
-          }
+        }
+        // send an initial welcome message
+        await sendMessage(sender_psid, response_first);
+
+        // send an image with a button to view menu
+        await sendMessage(sender_psid, response_second);
     });
 };
+
+
+let sendMessage = (sender_id, response) => {
+    let request_body = {
+        "recipient": {
+            "id": sender_psid
+        },
+        "message": response
+    };
+
+    // Send the HTTP request to the Messenger Platform
+    request({
+        "uri": "https://graph.facebook.com/v6.0/me/messages",
+        "qs": {
+            "access_token": PAGE_ACCESS_TOKEN
+        },
+        "method": "POST",
+        "json": request_body
+    }, (err, res, body) => {
+        if (!err) {
+            console.log('message sent!');
+        } else {
+            console.error("Unable to send message:" + err);
+        }
+    });
+}
 
 module.exports = {
     getFacebookUsername: getFacebookUsername,
