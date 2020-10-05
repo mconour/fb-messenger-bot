@@ -34,10 +34,11 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "template_type": "generic",
                         "elements": [{
                             "title": "RestaurantDemo",
+                            "subtitle": "Eat Healthy, Eat Fresh, Eat Local.",
                             "image_url": "https://bit.ly/30ygw0f",
                             "buttons": [{
                                 "type": "postback",
-                                "title": "show main menu",
+                                "title": "Show main menu",
                                 "payload": "MAIN_MENU",
                             }],
                         }]
@@ -98,7 +99,7 @@ let sendMainMenu = (sender_psid) => {
                         "elements": [
                             {
                             "title": "Menus",
-                            "subtitle": "Take advantage of a wide-ranging list of both lunch and dinner options!",
+                            "subtitle": "Take advantage of a wide array of both lunch and dinner options!",
                             "image_url": "https://bit.ly/30ygw0f",
                             "buttons": [
                                 {
@@ -136,13 +137,13 @@ let sendMainMenu = (sender_psid) => {
                         },
 
                         {
-                            "title": "RestaurantDemo",
+                            "title": "Banquet rooms",
                             "image_url": "https://bit.ly/30ygw0f",
                             "buttons": [
                                 {
                                 "type": "postback",
-                                "title": "show main menu",
-                                "payload": "MAIN_MENU",
+                                "title": "Show rooms",
+                                "payload": "SHOW_ROOMS",
                                }
                           ],
                         }
