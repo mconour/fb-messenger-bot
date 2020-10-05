@@ -120,7 +120,7 @@ let sendMainMenu = (sender_psid) => {
 
                             {
                                 "title": "Hours of operation",
-                                "subtitle": `10 a.m. to 11 p.m. Daily\nSAT 5 p.m. to 10 p.m.\nSUN 5 p.m. to 9  p.m.`,
+                                "subtitle": `10 a.m. to 11 p.m. DAILY\nSAT 5 p.m. to 10 p.m.\nSUN 5 p.m. to 9  p.m.`,
                                 "image_url": "https://bit.ly/30ygw0f",
                                 "buttons": [{
                                     "type": "postback",
