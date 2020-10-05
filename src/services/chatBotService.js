@@ -89,66 +89,61 @@ let sendMessage = (sender_psid, response) => {
 }
 
 let sendMainMenu = (sender_psid) => {
-    return new Promise( async (resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         try {
             let response = {
                 "attachment": {
                     "type": "template",
                     "payload": {
                         "template_type": "generic",
-                        "elements": [
+                        "elements": [{
+                                "title": "Menus",
+                                "subtitle": "Take advantage of a wide array of both lunch and dinner options!",
+                                "image_url": "https://bit.ly/30ygw0f",
+                                "buttons": [{
+                                        "type": "postback",
+                                        "title": "LUNCH MENU",
+                                        "payload": "LUNCH_MENU",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "DINNER MENU",
+                                        "payload": "DINNER_MENU",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "PUB MENU",
+                                        "payload": "PUB_MENU",
+                                    }
+                                ],
+                            },
+
                             {
-                            "title": "Menus",
-                            "subtitle": "Take advantage of a wide array of both lunch and dinner options!",
-                            "image_url": "https://bit.ly/30ygw0f",
-                            "buttons": [
-                                {
-                                "type": "postback",
-                                "title": "LUNCH MENU",
-                                "payload": "LUNCH_MENU",
-                               }, 
-                               {
-                                "type": "postback",
-                                "title": "DINNER MENU",
-                                "payload": "DINNER_MENU",
-                               },
-                               {
-                                "type": "postback",
-                                "title": "PUB MENU",
-                                "payload": "PUB_MENU",
-                               }
-                          ],
-                        },
+                                "title": "Hours of operation",
+                                "subtitle": `MON-FRI 10 a.m. to 11 p.m.
+                                            <br>
+                                            SAT 5 p.m. to 10 p.m.
+                                            <br>
+                                            SUN 5 p.m. to 9  p.m.`,
+                                "image_url": "https://bit.ly/30ygw0f",
+                                "buttons": [{
+                                    "type": "postback",
+                                    "title": "Reserve Table",
+                                    "payload": "RESERVE_TABLE",
+                                }],
+                            },
 
-                        {
-                            "title": "Hours of operation",
-                            "subtitle": `MON-FRI 10 a.m. to 11 p.m.
-                                         SAT 5 p.m. to 10 p.m.
-                                         SUN 5 p.m. to 9  p.m.
-                            `,
-                            "image_url": "https://bit.ly/30ygw0f",
-                            "buttons": [
-                                {
-                                "type": "postback",
-                                "title": "Reserve Table",
-                                "payload": "RESERVE_TABLE",
-                               }
-                          ],
-                        },
+                            {
+                                "title": "Banquet rooms",
+                                "image_url": "https://bit.ly/30ygw0f",
+                                "buttons": [{
+                                    "type": "postback",
+                                    "title": "Show rooms",
+                                    "payload": "SHOW_ROOMS",
+                                }],
+                            }
 
-                        {
-                            "title": "Banquet rooms",
-                            "image_url": "https://bit.ly/30ygw0f",
-                            "buttons": [
-                                {
-                                "type": "postback",
-                                "title": "Show rooms",
-                                "payload": "SHOW_ROOMS",
-                               }
-                          ],
-                        }
-
-                     ]
+                        ]
                     }
                 }
             }
