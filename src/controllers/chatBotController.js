@@ -128,11 +128,13 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "GET_STARTED":
             // get username
             let username = await chatBotService.getFacebookUsername(sender_psid);
-            await chatBotService.sendResponseWelcomeNewCustomer(username, sender_psid);
-            //response = {"text": `Hi, ${username}! Welcome to RestaurantDemo`};
+            
+            // send welcome response to user
+            await chatBotService.sendResponseWelcomeNewCustomer(username, sender_psid);            
             break;
-        case "no":
-            response = {};
+        case "MAIN_MENU":
+            // send main menu to user
+            await chatBotService.sendMainMenu(sender_psid);
             break; 
         case "yes":
             response = {};

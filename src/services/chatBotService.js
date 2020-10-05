@@ -24,42 +24,40 @@ let getFacebookUsername = (sender_psid) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-        let response_first = {"text": `Hi, ${username}! Welcome to RestaurantDemo`};
-        let response_second = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "generic",
-                    "elements": [
-                        {
-                        "title": "RestaurantDemo",
-                        "image_url": "https://bit.ly/30ygw0f",
-                        "buttons": [
-                            {
-                            "type": "postback",
-                            "title": "Main menu",
-                            "payload": "MENU",
-                            }
-                     ],
+            let response_first = {
+                "text": `Hi, ${username}! Welcome to RestaurantDemo`
+            };
+            let response_second = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [{
+                            "title": "RestaurantDemo",
+                            "image_url": "https://bit.ly/30ygw0f",
+                            "buttons": [{
+                                "type": "postback",
+                                "title": "show main menu",
+                                "payload": "MAIN_MENU",
+                            }],
+                        }]
                     }
-                ]
                 }
             }
-        }
-        // send an initial welcome message
-        await sendMessage(sender_psid, response_first);
+            // send an initial welcome message
+            await sendMessage(sender_psid, response_first);
 
-        // send an image with a button to view menu
-        await sendMessage(sender_psid, response_second);
+            // send an image with a button to view menu
+            await sendMessage(sender_psid, response_second);
 
-        resolve("complete");
+            resolve("complete");
 
-        } catch(e) {
+        } catch (e) {
             reject(e);
         }
 
 
-        
+
     });
 };
 
@@ -89,7 +87,81 @@ let sendMessage = (sender_psid, response) => {
     });
 }
 
+let sendMainMenu = (sender_psid) => {
+    return new Promise( async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                            "title": "Menus",
+                            "subtitle": "Take advantage of a wide-ranging list of both lunch and dinner options!",
+                            "image_url": "https://bit.ly/30ygw0f",
+                            "buttons": [
+                                {
+                                "type": "postback",
+                                "title": "LUNCH MENU",
+                                "payload": "LUNCH_MENU",
+                               }, 
+                               {
+                                "type": "postback",
+                                "title": "DINNER MENU",
+                                "payload": "DINNER_MENU",
+                               },
+                               {
+                                "type": "postback",
+                                "title": "PUB MENU",
+                                "payload": "PUB_MENU",
+                               }
+                          ],
+                        },
+
+                        {
+                            "title": "Hours of operation",
+                            "subtitle": `MON-FRI 10 a.m. to 11 p.m.
+                                         SAT 5 p.m. to 10 p.m.
+                                         SUN 5 p.m. to 9  p.m.
+                            `,
+                            "image_url": "https://bit.ly/30ygw0f",
+                            "buttons": [
+                                {
+                                "type": "postback",
+                                "title": "Reserve Table",
+                                "payload": "RESERVE_TABLE",
+                               }
+                          ],
+                        },
+
+                        {
+                            "title": "RestaurantDemo",
+                            "image_url": "https://bit.ly/30ygw0f",
+                            "buttons": [
+                                {
+                                "type": "postback",
+                                "title": "show main menu",
+                                "payload": "MAIN_MENU",
+                               }
+                          ],
+                        }
+
+                     ]
+                    }
+                }
+            }
+            // send an initial welcome message
+            await sendMessage(sender_psid, response);
+        } catch (e) {
+            reject(e);
+        }
+    });
+
+};
+
 module.exports = {
     getFacebookUsername: getFacebookUsername,
-    sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer
+    sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer,
+    sendMainMenu: sendMainMenu
 };
