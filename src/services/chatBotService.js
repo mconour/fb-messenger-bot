@@ -30,7 +30,8 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                 "type": "template",
                 "payload": {
                     "template_type": "generic",
-                    "elements": [{
+                    "elements": [
+                        {
                         "title": "RestaurantDemo",
                         "image_url": "https://bit.ly/30ygw0f",
                         "buttons": [
@@ -40,7 +41,8 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                             "payload": "MENU",
                             }
                      ],
-                    }]
+                    }
+                ]
                 }
             }
         }
