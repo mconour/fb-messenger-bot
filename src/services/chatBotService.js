@@ -59,30 +59,6 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     });
 };
 
-let sendMessage = (sender_psid, response) => {
-    let request_body = {
-        "recipient": {
-            "id": sender_psid
-        },
-        "message": response
-    };
-
-    // Send the HTTP request to the Messenger Platform
-    request({
-        "uri": "https://graph.facebook.com/v6.0/me/messages",
-        "qs": {
-            "access_token": PAGE_ACCESS_TOKEN
-        },
-        "method": "POST",
-        "json": request_body
-    }, (err, res, body) => {
-        if (!err) {
-            console.log('message sent!');
-        } else {
-            console.error("Unable to send message:" + err);
-        }
-    });
-}
 
 let sendMainMenu = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
@@ -148,8 +124,97 @@ let sendMainMenu = (sender_psid) => {
 
 };
 
+
+let sendLunchMenu = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [{
+                                "title": "Appetizers",                        
+                                "image_url": "https://bit.ly/34G2nQ5",
+                                "buttons": [{
+                                        "type": "postback",
+                                        "title": "SHOW APPETIZERS",
+                                        "payload": "SHOW_APPETIZERS",
+                                    }
+                                ],
+                            },
+
+                            {
+                                "title": "Entree Salad",
+                                "image_url": "https://bit.ly/3dHeQXM",
+                                "buttons": [{
+                                    "type": "postback",
+                                    "title": "Reserve Table",
+                                    "payload": "RESERVE_TABLE",
+                                }],
+                            },
+
+                            {
+                                "title": "Banquet rooms",
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [{
+                                    "type": "postback",
+                                    "title": "Show rooms",
+                                    "payload": "SHOW_ROOMS",
+                                }],
+                            }
+
+                        ]
+                    }
+                }
+            }
+            // send an initial welcome message
+            await sendMessage(sender_psid, response);
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendDinnerMenu = (sender_psid) => {
+
+};
+
+let sendPubMenu = (sender_psid) => {
+
+};
+
+let sendMessage = (sender_psid, response) => {
+    let request_body = {
+        "recipient": {
+            "id": sender_psid
+        },
+        "message": response
+    };
+
+    // Send the HTTP request to the Messenger Platform
+    request({
+        "uri": "https://graph.facebook.com/v6.0/me/messages",
+        "qs": {
+            "access_token": PAGE_ACCESS_TOKEN
+        },
+        "method": "POST",
+        "json": request_body
+    }, (err, res, body) => {
+        if (!err) {
+            console.log('message sent!');
+        } else {
+            console.error("Unable to send message:" + err);
+        }
+    });
+};
+
+
 module.exports = {
     getFacebookUsername: getFacebookUsername,
     sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer,
-    sendMainMenu: sendMainMenu
+    sendMainMenu: sendMainMenu,
+    sendLunchMenu: sendLunchMenu,
+    sendDinnerMenu: sendDinnerMenu,
+    sendPubMenu: sendPubMenu
 };
