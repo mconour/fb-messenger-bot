@@ -56,12 +56,8 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
         } catch (e) {
             reject(e);
         }
-
-
-
     });
 };
-
 
 let sendMessage = (sender_psid, response) => {
     let request_body = {
@@ -99,7 +95,7 @@ let sendMainMenu = (sender_psid) => {
                         "elements": [{
                                 "title": "Menus",
                                 "subtitle": "Take advantage of a wide array of both lunch and dinner options!",
-                                "image_url": "https://bit.ly/30ygw0f",
+                                "image_url": "https://bit.ly/34G2nQ5",
                                 "buttons": [{
                                         "type": "postback",
                                         "title": "LUNCH MENU",
