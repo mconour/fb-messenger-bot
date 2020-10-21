@@ -127,7 +127,7 @@ let sendMainMenu = (sender_psid) => {
 
                             {
                                 "title": "Banquet rooms",
-                                "image_url": "https://bit.ly/30ygw0f",
+                                "image_url": "https://bit.ly/2HkMq9N",
                                 "buttons": [{
                                     "type": "postback",
                                     "title": "Show rooms",
