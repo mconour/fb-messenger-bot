@@ -149,19 +149,21 @@ let sendLunchMenu = (sender_psid) => {
                                 "image_url": "https://bit.ly/3dHeQXM",
                                 "buttons": [{
                                     "type": "postback",
-                                    "title": "Reserve Table",
-                                    "payload": "RESERVE_TABLE",
+                                    "title": "SHOW ENTREE SALAD",
+                                    "payload": "SHOW_ENTREE_SALAD",
                                 }],
                             },
 
                             {
-                                "title": "Banquet rooms",
+                                "title": "Fish and Shell Fish",
                                 "image_url": "https://bit.ly/3ocHhBy",
-                                "buttons": [{
+                                "buttons": [
+                                    {
                                     "type": "postback",
-                                    "title": "Show rooms",
-                                    "payload": "SHOW_ROOMS",
-                                }],
+                                    "title": "SHOW_FISH",
+                                    "payload": "SHOW_FISH",
+                                 }
+                               ],
                             }
 
                         ]
