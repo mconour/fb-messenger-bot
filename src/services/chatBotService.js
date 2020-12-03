@@ -164,6 +164,31 @@ let sendLunchMenu = (sender_psid) => {
                                     "payload": "SHOW_FISH",
                                  }
                                ],
+                            },
+
+                            {
+                                "title": "Demo Classics",
+                                "subtitle": "and dry-aged onsite.",
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [
+                                    {
+                                    "type": "postback",
+                                    "title": "SHOW CLASSICS",
+                                    "payload": "SHOW_CLASSICS",
+                                 }
+                               ],
+                            }, 
+
+                            {
+                                "title": "Go back",                               
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [
+                                    {
+                                    "type": "postback",
+                                    "title": "BACK TO MAIN MENU",
+                                    "payload": "BACK_TO_MAIN_MENU",
+                                 }
+                               ],
                             }
 
                         ]
