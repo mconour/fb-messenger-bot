@@ -195,6 +195,7 @@ let sendLunchMenu = (sender_psid) => {
                     }
                 }
             }
+            
             // send an initial welcome message
             await sendMessage(sender_psid, response);
         } catch (e) {
@@ -204,11 +205,161 @@ let sendLunchMenu = (sender_psid) => {
 };
 
 let sendDinnerMenu = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [{
+                                "title": "Appetizers",                        
+                                "image_url": "https://bit.ly/34G2nQ5",
+                                "buttons": [{
+                                        "type": "postback",
+                                        "title": "SHOW APPETIZERS",
+                                        "payload": "SHOW_APPETIZERS",
+                                    }
+                                ],
+                            },
 
+                            {
+                                "title": "Entree Salad",
+                                "image_url": "https://bit.ly/3dHeQXM",
+                                "buttons": [{
+                                    "type": "postback",
+                                    "title": "SHOW ENTREE SALAD",
+                                    "payload": "SHOW_ENTREE_SALAD",
+                                }],
+                            },
+
+                            {
+                                "title": "Fish and Shell Fish",
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [
+                                    {
+                                    "type": "postback",
+                                    "title": "SHOW_FISH",
+                                    "payload": "SHOW_FISH",
+                                 }
+                               ],
+                            },
+
+                            {
+                                "title": "Demo Classics",
+                                "subtitle": "and dry-aged onsite.",
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [
+                                    {
+                                    "type": "postback",
+                                    "title": "SHOW CLASSICS",
+                                    "payload": "SHOW_CLASSICS",
+                                 }
+                               ],
+                            }, 
+
+                            {
+                                "title": "Go back",                               
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [
+                                    {
+                                    "type": "postback",
+                                    "title": "BACK TO MAIN MENU",
+                                    "payload": "BACK_TO_MAIN_MENU",
+                                 }
+                               ],
+                            }
+
+                        ]
+                    }
+                }
+            }
+            
+            // send an initial welcome message
+            await sendMessage(sender_psid, response);
+        } catch (e) {
+            reject(e);
+        }
+    });
 };
 
 let sendPubMenu = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [{
+                                "title": "Appetizers",                        
+                                "image_url": "https://bit.ly/34G2nQ5",
+                                "buttons": [{
+                                        "type": "postback",
+                                        "title": "SHOW APPETIZERS",
+                                        "payload": "SHOW_APPETIZERS",
+                                    }
+                                ],
+                            },
 
+                            {
+                                "title": "Entree Salad",
+                                "image_url": "https://bit.ly/3dHeQXM",
+                                "buttons": [{
+                                    "type": "postback",
+                                    "title": "SHOW ENTREE SALAD",
+                                    "payload": "SHOW_ENTREE_SALAD",
+                                }],
+                            },
+
+                            {
+                                "title": "Fish and Shell Fish",
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [
+                                    {
+                                    "type": "postback",
+                                    "title": "SHOW_FISH",
+                                    "payload": "SHOW_FISH",
+                                 }
+                               ],
+                            },
+
+                            {
+                                "title": "Demo Classics",
+                                "subtitle": "and dry-aged onsite.",
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [
+                                    {
+                                    "type": "postback",
+                                    "title": "SHOW CLASSICS",
+                                    "payload": "SHOW_CLASSICS",
+                                 }
+                               ],
+                            }, 
+
+                            {
+                                "title": "Go back",                               
+                                "image_url": "https://bit.ly/3ocHhBy",
+                                "buttons": [
+                                    {
+                                    "type": "postback",
+                                    "title": "BACK TO MAIN MENU",
+                                    "payload": "BACK_TO_MAIN_MENU",
+                                 }
+                               ],
+                            }
+
+                        ]
+                    }
+                }
+            }
+            
+            // send an initial welcome message
+            await sendMessage(sender_psid, response);
+        } catch (e) {
+            reject(e);
+        }
+    });
 };
 
 let sendMessage = (sender_psid, response) => {
