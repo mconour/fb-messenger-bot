@@ -8,7 +8,7 @@ let getFacebookUsername = (sender_psid) => {
         request({
             "uri": uri,
             "method": "GET",
-        }, (err, res, body) => {
+        }, (err, res, body) => {adsfs
             if (!err) {
                 // convert string to json object
                 body = JSON.parse(body);
