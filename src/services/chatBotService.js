@@ -35,7 +35,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "elements": [{
                             "title": "RestaurantDemo",
                             "subtitle": "Eat Healthy, Eat Fresh, Eat Local.",
-                            "image_url": "https://bit.ly/3odMf0T",
+                            "image_url": "https://bit.ly/2Y60UPX",
                             "buttons": [{
                                 "type": "postback",
                                 "title": "Show main menu",
