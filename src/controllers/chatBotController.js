@@ -145,7 +145,7 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "PUB_MENU":
               await chatBotService.sendPubMenu(sender_psid);
               break;
-        case "RESERVE_TABLE": 
+        case "RESERVE_TABLE":
               response = {};
               break;
         case  "SHOW_ROOMS":
