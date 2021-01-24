@@ -25,7 +25,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response_first = {
-                "text": `Hi, ${username}! Welcome to Feast ChatBot`
+                "text": `Hi, ${username}! Welcome to HelloFeast.`
             };
             let response_second = {
                 "attachment": {
@@ -33,7 +33,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                     "payload": {
                         "template_type": "generic",
                         "elements": [{
-                            "title": "FEAST CHATBOT",
+                            "title": "HelloFeast",
                             "subtitle": "Eat Healthy, Eat Fresh, Eat Local.",
                             "image_url": "https://bit.ly/3qOqCoG",
                             "buttons": [{
